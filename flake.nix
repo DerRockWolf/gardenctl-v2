@@ -31,7 +31,7 @@ SPDX-License-Identifier: Apache-2.0
       pkgs = nixpkgsFor.${system};
       inherit (pkgs) stdenv lib;
     in {
-      ${pname} = pkgs.buildGo121Module rec {
+      ${pname} = pkgs.buildGoModule rec {
         inherit pname self;
         version = lib.fileContents ./VERSION;
         splitVersion = lib.versions.splitVersion version;
